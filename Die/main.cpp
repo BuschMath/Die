@@ -1,14 +1,17 @@
 #include <iostream>
-#include "Die.h"  // Include the Die class specification
+#include "Die.h"
+#include "Dice.h"
 
 int main() {
-    Die die1; // Default 6-sided die
-    die1.roll();
-    std::cout << "Die1 rolled: " << die1.getValue() << std::endl;
+    // Test the Die class
+    Die singleDie(6);
+    singleDie.roll();
+    std::cout << "Single die rolled: " << singleDie.getValue() << std::endl;
 
-    Die die2(12); // 12-sided die
-    die2.roll();
-    std::cout << "Die2 rolled: " << die2.getValue() << std::endl;
+    // Test the Dice class with 5 dice, each having 6 sides
+    Dice dice(5, 6);
+    dice.roll();
+    std::cout << "Total value after rolling 5 dice: " << dice.getTotalValue() << std::endl;
 
     return 0;
 }
